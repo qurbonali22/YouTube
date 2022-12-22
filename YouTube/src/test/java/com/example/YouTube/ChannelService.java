@@ -4,12 +4,16 @@ import com.example.YouTube.dto.channel.ChannelDTO;
 import com.example.YouTube.entity.ChannelEntity;
 import com.example.YouTube.entity.ProfileEntity;
 import com.example.YouTube.enums.ProfileRole;
+import com.example.YouTube.enums.ProfileStatus;
+import com.example.YouTube.exception.ChannelNotFoundException;
 import com.example.YouTube.exception.ProfileIdNotFound;
 import com.example.YouTube.repository.ChannelRepository;
 import com.example.YouTube.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -68,8 +72,7 @@ public class ChannelService {
         Optional<ChannelEntity> byIdChannel = channelRepository.findById(id);
         if(byIdChannel.isEmpty()){
             throw new ProfileIdNotFound("This id not found!!!");
-        }Optional<ChannelEntity> bychannel = channelRepository.findById(id);
-        ChannelEntity channel = bychannel.get();
+        }ChannelEntity channel = byIdChannel.get();
         Optional<ProfileEntity> byProfile = profileRepository.findById(channel.getProfileId());
         if (byProfile.isEmpty()) {
             throw new ProfileIdNotFound("This profile not found!!!");
@@ -88,8 +91,7 @@ public class ChannelService {
         Optional<ChannelEntity> byIdChannel = channelRepository.findById(id);
         if(byIdChannel.isEmpty()){
             throw new ProfileIdNotFound("This id not found!!!");
-        }Optional<ChannelEntity> bychannel = channelRepository.findById(id);
-        ChannelEntity channel = bychannel.get();
+        } ChannelEntity channel = byIdChannel.get();
         Optional<ProfileEntity> byProfile = profileRepository.findById(channel.getProfileId());
         if (byProfile.isEmpty()) {
             throw new ProfileIdNotFound("This profile not found!!!");
@@ -104,7 +106,39 @@ public class ChannelService {
         }
         return false;
     }
+    public ChannelDTO getChannelById(Integer id){
+        Optional<ChannelEntity> optional = channelRepository.findById(id);
+        if(optional.isEmpty()){
+            throw new ChannelNotFoundException("This id not found!!!");
+        }ChannelDTO dto = toDTO(optional.get());
+        return dto;
+    }
+    public Boolean changeStatus(Integer id, ProfileStatus status){
+        Optional<ChannelEntity> byIdChannel = channelRepository.findById(id);
+        if(byIdChannel.isEmpty()){
+            throw new ProfileIdNotFound("This id not found!!!");
+        }ChannelEntity channel = byIdChannel.get();
+        Optional<ProfileEntity> byProfile = profileRepository.findById(channel.getProfileId());
+        if (byProfile.isEmpty()) {
+            throw new ProfileIdNotFound("This profile not found!!!");
+        }
+        ProfileEntity profile = byProfile.get();
+        if(profile.getRole() != null){
+            ChannelEntity entity = byIdChannel.get();
+            entity.setStatus(status);
+            channelRepository.save(entity);
+            return true;
+        }
+        return false;
+    }
+    public List<ChannelDTO> getUserChanel(Integer id){
+        Iterable<ChannelEntity> listbyProfileId = channelRepository.findByProfileId(id);
+        List<ChannelDTO> channelDtoList = new ArrayList<>();
+        for(ChannelEntity entity:listbyProfileId){
+            channelDtoList.add(toDTO(entity));
+        }return channelDtoList;
 
+    }
 
     public ChannelDTO toDTO(ChannelEntity entity) {
         ChannelDTO dto = new ChannelDTO();
