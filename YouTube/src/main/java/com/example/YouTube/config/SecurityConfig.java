@@ -63,6 +63,7 @@ public class SecurityConfig {
                 .requestMatchers("/category/getList").permitAll()
                 .requestMatchers("/tag/getList").permitAll()
                 .requestMatchers("/tag/create").permitAll()
+                .requestMatchers("/attach/upload").permitAll()
                 .requestMatchers("/profile/**").hasRole("ADMIN")
                 //todo 1ta * sleshdan keyin 1ta urli borlarni taniydi 2ta * sleshda ketyin
                 //todo qancha url bo`lsa ham hammasini oladi
