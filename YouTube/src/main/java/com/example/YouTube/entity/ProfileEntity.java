@@ -47,4 +47,3 @@ public class ProfileEntity {
 
 }
 
-//id,name,surname,email,password,photo,role,status
