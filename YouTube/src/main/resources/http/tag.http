@@ -1,0 +1,23 @@
+### get all tags
+GET localhost:8081/tag/getList
+
+### create tag
+POST localhost:8081/tag/create
+Content-Type: application/json
+
+{
+  "name": "multfilm"
+}
+
+### delete by id
+DELETE localhost:8081/tag/delete/1
+Accept-Language: EN
+
+### update by id
+PUT localhost:8081/tag/update/1
+Content-Type: application/json
+Accept-Language: EN
+
+{
+  "name": "film"
+}
