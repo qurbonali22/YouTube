@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.LocalDateTime;
+
 //id(uuid),name,photo,description,status (ACTIVE, BLOCK),banner,profile_id
 @Setter
 @Getter
@@ -16,7 +18,8 @@ import org.hibernate.annotations.GenericGenerator;
 public class ChannelEntity {
 
     @Id
-    @GenericGenerator(name = "attach_uuid", strategy = "org.hibernate.id.UUIDGenerator")
+    @GeneratedValue(generator = "generator_uuid")
+    @GenericGenerator(name = "generator_uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
 
     @Column
@@ -31,6 +34,7 @@ public class ChannelEntity {
     @Column
     private String description;
 
+    @Enumerated(EnumType.STRING)
     @Column
     private GeneralStatus status;
 
@@ -45,4 +49,7 @@ public class ChannelEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_id", insertable = false, updatable = false)
     private ProfileEntity profile;
+
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
 }
