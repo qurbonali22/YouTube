@@ -53,12 +53,26 @@ public class SecurityConfig {
 
     }
 
+    private static final String[] AUTH_WHITELIST = {
+            "/v2/api-docs",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/swagger-resources",
+            "/swagger-resources/**"
+    };
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+
 // authorization
         http.csrf().disable().cors().disable();
         http.authorizeHttpRequests()
+                .requestMatchers(AUTH_WHITELIST).permitAll()
                 .requestMatchers("/profile/**").permitAll()
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/category/getList").permitAll()

@@ -3,6 +3,8 @@ package com.example.YouTube.controller;
 import com.example.YouTube.dto.attach.AttachResponseDTO;
 import com.example.YouTube.enums.Language;
 import com.example.YouTube.service.AttachService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
@@ -15,12 +17,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/attach")
+@Tag(name = "AttachController API", description = "Api list for Attach")
 public class AttachController {
 
     @Autowired
     private AttachService attachService;
 
     @PostMapping("/upload")
+    @Operation(summary = " attach upload", description = "Method used for upload attach")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file,
                                     @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language) {
         AttachResponseDTO fileName = attachService.saveToSystem(file,language);
