@@ -4,6 +4,8 @@ import com.example.YouTube.dto.ProfileDTO;
 import com.example.YouTube.entity.ProfileEntity;
 import com.example.YouTube.service.ProfileService;
 import com.example.YouTube.util.SpringSecurityUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/profile")
+@Tag(name = "ProfileController API", description = "Api list for Profile")
 public class ProfileController {
 
     @Autowired
@@ -20,6 +23,7 @@ public class ProfileController {
 
     @PreAuthorize("hasAnyRole('ADMIN','USER','OWNER')")
     @PutMapping("/changePassword/{password}")
+    @Operation(summary = " change Password", description = "Method used for change password of Profile")
     public ResponseEntity<?> changePassword(@PathVariable("password") String password){
         String result=profileService.changePassword(password, SpringSecurityUtil.getCurrentUserId());
         return ResponseEntity.ok(result);
