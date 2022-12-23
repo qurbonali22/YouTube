@@ -10,7 +10,7 @@ public class YouTubeApplication {
 	public static void main(String[] args) {
 		System.out.println(MD5Util.MD5("1999"));
 		SpringApplication.run(YouTubeApplication.class, args);
-
+		System.out.println("Salom");
 
 	}
 
