@@ -1,5 +1,6 @@
 package com.example.YouTube.service;
 
+import com.example.YouTube.config.SecurityConfig;
 import com.example.YouTube.dto.channel.ChannelCreationDTO;
 import com.example.YouTube.dto.channel.ChannelDTO;
 import com.example.YouTube.dto.channel.ChannelUpdateAttachDTO;
@@ -9,6 +10,8 @@ import com.example.YouTube.enums.GeneralStatus;
 import com.example.YouTube.enums.Language;
 import com.example.YouTube.exception.ItemNotFoundException;
 import com.example.YouTube.repository.ChannelRepository;
+import com.example.YouTube.util.SpringSecurityUtil;
+import org.apache.tomcat.util.net.SSLUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -30,11 +33,11 @@ public class ChannelService {
     @Autowired
     private ChannelRepository channelRepository;
 
-    public ChannelDTO create(ChannelCreationDTO dto, Integer profileId){
+    public ChannelDTO create(ChannelCreationDTO dto){
         ChannelEntity entity = new ChannelEntity();
         entity.setName(dto.getName());
         entity.setDescription(dto.getDescription());
-        entity.setProfileId(profileId);
+        entity.setProfileId(SpringSecurityUtil.getCurrentUserId());
         entity.setBannerId(dto.getBannerId());
         entity.setPhotoId(dto.getPhotoId());
         entity.setStatus(GeneralStatus.ACTIVE);
