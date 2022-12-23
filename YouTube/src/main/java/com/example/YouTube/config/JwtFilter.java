@@ -1,6 +1,6 @@
 package com.example.YouTube.config;
 
-import com.example.YouTube.dto.JwtDTO;
+import com.example.YouTube.dto.jwt.JwtDTO;
 import com.example.YouTube.service.CustomUserDetailsService;
 import com.example.YouTube.util.JwtTokenUtil;
 import io.jsonwebtoken.JwtException;

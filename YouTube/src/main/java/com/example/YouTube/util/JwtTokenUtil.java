@@ -1,6 +1,6 @@
 package com.example.YouTube.util;
 
-import com.example.YouTube.dto.JwtDTO;
+import com.example.YouTube.dto.jwt.JwtDTO;
 import com.example.YouTube.enums.ProfileRole;
 import io.jsonwebtoken.*;
 
