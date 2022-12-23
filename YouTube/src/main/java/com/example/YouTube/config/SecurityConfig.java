@@ -59,6 +59,7 @@ public class SecurityConfig {
 // authorization
         http.csrf().disable().cors().disable();
         http.authorizeHttpRequests()
+                .requestMatchers("/profile/**").permitAll()
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/category/getList").permitAll()
                 .requestMatchers("/tag/getList").permitAll()
@@ -95,5 +96,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder() { // {noop}
         return NoOpPasswordEncoder.getInstance();
     }
+
 
 }

@@ -33,10 +33,14 @@ public class AuthService {
     public String registration(ProfileDTO dto) {
 
         Optional<ProfileEntity> byEmail = profileRepository.findByEmail(dto.getEmail());
-        if (byEmail.isPresent()) {
-            throw new EmailAlreadyExistException("This User is already registrated!!!");
+        ProfileEntity exists=byEmail.get();
+        if (exists != null){
+            if (exists.getStatus().equals(ProfileStatus.NOT_ACTIVE)){
+                profileRepository.delete(exists);
+            }else {
+                throw new EmailAlreadyExistException("Email already exists");
+            }
         }
-
 
         ProfileEntity entity = new ProfileEntity();
         entity.setEmail(dto.getEmail());
