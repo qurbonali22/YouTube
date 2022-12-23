@@ -1,0 +1,26 @@
+### get all categories
+GET localhost:8081/category/getList
+
+### create category
+POST localhost:8081/category/create
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE3MjMzNjUsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTgwOTc2NSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.pWIvxBEAG7zpWp_JJGsqK69UlFT8kfNdzR4FqMUrmaYyGFLu9l-okpx2pnfThRTWLnIraTIe5fiR9Y7ByKWKGw
+Content-Type: application/json
+
+{
+  "name": "news"
+}
+
+### delete by id
+DELETE localhost:8081/category/delete/14
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE3MjMzNjUsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTgwOTc2NSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.pWIvxBEAG7zpWp_JJGsqK69UlFT8kfNdzR4FqMUrmaYyGFLu9l-okpx2pnfThRTWLnIraTIe5fiR9Y7ByKWKGw
+Accept-Language: EN
+
+### update by id
+PUT localhost:8081/category/update/16
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE3MjMzNjUsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTgwOTc2NSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.pWIvxBEAG7zpWp_JJGsqK69UlFT8kfNdzR4FqMUrmaYyGFLu9l-okpx2pnfThRTWLnIraTIe5fiR9Y7ByKWKGw
+Content-Type: application/json
+Accept-Language: EN
+
+{
+  "name": "yangiliklar"
+}

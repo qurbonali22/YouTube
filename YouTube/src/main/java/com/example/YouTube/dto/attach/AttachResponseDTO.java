@@ -1,4 +1,4 @@
-package com.example.YouTube.dto;
+package com.example.YouTube.dto.attach;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,4 +15,5 @@ public class AttachResponseDTO {
     private String extension;
     private LocalDateTime createdData;
     private String url;
+    private Long duration;
 }

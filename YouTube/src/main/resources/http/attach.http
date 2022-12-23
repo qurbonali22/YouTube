@@ -1,0 +1,26 @@
+### Upload file
+POST http://localhost:8081/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+Accept-Language: RU
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="rasm1.png"
+
+< C:\Users\user\Desktop\rasm1.png
+
+
+### open general
+GET http://localhost:8081/attach/open_general/9b8edd0a-6a15-49ec-9645-3b7ce45296c4.png
+
+### download
+GET http://localhost:8081/attach/download/9b8edd0a-6a15-49ec-9645-3b7ce45296c4
+
+### Delete
+DELETE http://localhost:8081/attach/delete/9b8edd0a-6a15-49ec-9645-3b7ce45296c4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE3MjMzNjUsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTgwOTc2NSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.pWIvxBEAG7zpWp_JJGsqK69UlFT8kfNdzR4FqMUrmaYyGFLu9l-okpx2pnfThRTWLnIraTIe5fiR9Y7ByKWKGw
+
+### get all
+GET localhost:8081/attach/get
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE3MjMzNjUsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTgwOTc2NSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.pWIvxBEAG7zpWp_JJGsqK69UlFT8kfNdzR4FqMUrmaYyGFLu9l-okpx2pnfThRTWLnIraTIe5fiR9Y7ByKWKGw
+
+
