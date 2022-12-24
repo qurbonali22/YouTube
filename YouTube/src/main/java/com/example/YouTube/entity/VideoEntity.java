@@ -22,11 +22,14 @@ public class VideoEntity {
     @Enumerated(EnumType.STRING)
     private VideoStatus status;
 
-    @Column(name = "view_count")
+    @Column(name = "shared_count")
     private long sharedCount;
 
     @Column
     private String description;
+
+    @Column
+    private long viewCount;
 
     @Column(name = "like_count")
     private long likeCount;
@@ -66,13 +69,6 @@ public class VideoEntity {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "channel_id", insertable = false, updatable = false)
     private ChannelEntity channel;
-
-    @Column(name = "view_count_id")
-    private Integer viewCountId;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "view_count_id", insertable = false, updatable = false)
-    private ViewCountEntity viewCount;
-
 
 }
 
