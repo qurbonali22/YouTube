@@ -9,6 +9,7 @@ import com.example.YouTube.util.JwtTokenUtil;
 import com.example.YouTube.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -92,13 +93,16 @@ public class ProfileService {
         return dto;
     }
 
-    private ProfileEntity getEntity(Integer profileId){
+    public ProfileEntity getEntity(Integer profileId){
         Optional<ProfileEntity> optional=profileRepository.findById(profileId);
         return optional.get();
     }
 
     private ProfileEntity getEntityByEmail(String email) {
         Optional<ProfileEntity> optional=profileRepository.findByEmail(email);
+        if (optional.isEmpty()){
+            throw new NotFoundException("email is not exist!!!");
+        }
         return optional.get();
     }
 }
