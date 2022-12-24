@@ -1,5 +1,6 @@
 package com.example.YouTube.dto.profile;
 
+import com.example.YouTube.dto.attach.AttachResponseDTO;
 import com.example.YouTube.entity.AttachEntity;
 import com.example.YouTube.enums.ProfileRole;
 import com.example.YouTube.enums.ProfileStatus;
@@ -20,5 +21,5 @@ public class ProfileDTO {
     private ProfileStatus status;
     private LocalDateTime createdDate;
     private String attachId;
-    private AttachEntity attach;
+    private AttachResponseDTO attach;
 }
