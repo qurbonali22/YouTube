@@ -76,9 +76,9 @@ public class SecurityConfig {
                 .requestMatchers("/profile/**").permitAll()
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/category/getList").permitAll()
-                .requestMatchers("/tag/getList").permitAll()
-                .requestMatchers("/tag/create").permitAll()
-                .requestMatchers("/attach/upload").permitAll()
+                .requestMatchers("/tag/public/**").permitAll()
+                .requestMatchers("/attach/public/**").permitAll()
+                .requestMatchers("/videoTag/public/**").permitAll()
                 .requestMatchers("/profile/**").hasRole("ADMIN")
                 //todo 1ta * sleshdan keyin 1ta urli borlarni taniydi 2ta * sleshda ketyin
                 //todo qancha url bo`lsa ham hammasini oladi

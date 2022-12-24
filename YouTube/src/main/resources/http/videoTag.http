@@ -1,26 +1,25 @@
-### get all categories
-GET localhost:8081/category/getList
-
-### create category
-POST localhost:8081/category/create
+### create videoTag
+POST localhost:8081/videoTag/create
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE4MDk4NDIsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTg5NjI0MiwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.lWdNG-7fSXW5teJ4xLi0hQK11docDDtXdbfF3SEmDXuZ7kDJGwEMzY-gcANAeus9jL_TO5ruyP6cvx-RHNSjEw
 Content-Type: application/json
 
 {
-  "name": "news"
+  "videoId": "",
+  "tagId": 10
 }
 
-### delete by id
-DELETE localhost:8081/category/delete/18
+### delete videoTag
+DELETE localhost:8081/videoTag/delete
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE4MDk4NDIsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTg5NjI0MiwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.lWdNG-7fSXW5teJ4xLi0hQK11docDDtXdbfF3SEmDXuZ7kDJGwEMzY-gcANAeus9jL_TO5ruyP6cvx-RHNSjEw
-Accept-Language: EN
-
-### update by id
-PUT localhost:8081/category/update/18
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE4MDk4NDIsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTg5NjI0MiwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.lWdNG-7fSXW5teJ4xLi0hQK11docDDtXdbfF3SEmDXuZ7kDJGwEMzY-gcANAeus9jL_TO5ruyP6cvx-RHNSjEw
+Accept-Language: RU
 Content-Type: application/json
-Accept-Language: EN
 
 {
-  "name": "yangiliklar"
+"videoId": "",
+"tagId": 10
 }
+
+### getList of videotag by videoId
+GET localhost:8081/videoTag/public/getList/2
+Accept-Language: RU
+

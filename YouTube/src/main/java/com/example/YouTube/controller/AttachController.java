@@ -23,7 +23,7 @@ public class AttachController {
     @Autowired
     private AttachService attachService;
 
-    @PostMapping("/upload")
+    @PostMapping("/public/upload")
     @Operation(summary = " attach upload", description = "Method used for upload attach")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file,
                                     @RequestHeader(value = "Accept-Language", defaultValue = "UZ") Language language) {
@@ -37,13 +37,13 @@ public class AttachController {
 //        return attachService.open(fileName);
 //    }
 
-    @GetMapping(value = "/open_general/{fileName}", produces = MediaType.ALL_VALUE)
+    @GetMapping(value = "/public/open_general/{fileName}", produces = MediaType.ALL_VALUE)
     public byte[] open_general(@PathVariable("fileName") String fileName,
                                @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
         return attachService.open_general(fileName, language);
     }
 
-    @GetMapping("/download/{fineName}")
+    @GetMapping("/public/download/{fineName}")
     public ResponseEntity<Resource> download(@PathVariable("fineName") String fileName,
                                              @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
         Resource file = attachService.download(fileName, language);

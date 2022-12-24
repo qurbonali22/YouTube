@@ -18,7 +18,7 @@ public class TagController {
     @Autowired
     private TagService tagService;
 
-    @PostMapping("/create")
+    @PostMapping("/public/create")
     public ResponseEntity<TagDTO> save(@RequestBody TagCreationDTO dto){
         return ResponseEntity.ok(tagService.create(dto));
     }
@@ -40,7 +40,7 @@ public class TagController {
         return ResponseEntity.ok(tagService.delete(id, language));
     }
 
-    @GetMapping("getList")
+    @GetMapping("/public/getList")
     public ResponseEntity<List<TagDTO>> getList(){
         return ResponseEntity.ok(tagService.getList());
     }
