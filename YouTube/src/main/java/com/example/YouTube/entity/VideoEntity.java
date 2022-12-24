@@ -49,7 +49,7 @@ public class VideoEntity {
     private VideoType type;
 
     @Column(name = "category_id",unique = true)
-    private String categoryId;
+    private Integer categoryId;
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", insertable = false, updatable = false,unique = true)
     private CategoryEntity category;
