@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "video")
 public class VideoEntity {
     @Id
+    @GeneratedValue(generator = "generator_uuid")
     @GenericGenerator(name = "video_uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
     @Column
@@ -43,6 +44,7 @@ public class VideoEntity {
     @Column(name = "published_date")
     private LocalDateTime publishedDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "video_type")
     private VideoType type;
 
