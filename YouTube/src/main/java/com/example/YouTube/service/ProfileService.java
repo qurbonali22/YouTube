@@ -1,8 +1,7 @@
 package com.example.YouTube.service;
 
-import com.example.YouTube.dto.ProfileDTO;
+import com.example.YouTube.dto.profile.ProfileDTO;
 import com.example.YouTube.entity.ProfileEntity;
-import com.example.YouTube.enums.ProfileRole;
 import com.example.YouTube.enums.ProfileStatus;
 import com.example.YouTube.exception.EmailAlreadyExistException;
 import com.example.YouTube.repository.ProfileRepository;
@@ -71,6 +70,7 @@ public class ProfileService {
         entity.setStatus(ProfileStatus.ACTIVE);
         entity.setRole(dto.getRole());
         entity.setPassword(MD5Util.MD5(dto.getPassword()));
+        entity.setAttachId(dto.getAttachId());
         entity.setCreatedDate(LocalDateTime.now());
 
         profileRepository.save(entity);

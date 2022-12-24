@@ -1,4 +1,4 @@
-package com.example.YouTube.dto;
+package com.example.YouTube.dto.jwt;
 
 import com.example.YouTube.enums.ProfileRole;
 import lombok.AllArgsConstructor;

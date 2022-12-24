@@ -1,4 +1,4 @@
-package com.example.YouTube.dto;
+package com.example.YouTube.dto.profile;
 
 import com.example.YouTube.entity.AttachEntity;
 import com.example.YouTube.enums.ProfileRole;
@@ -19,6 +19,6 @@ public class ProfileDTO {
     private ProfileRole role;
     private ProfileStatus status;
     private LocalDateTime createdDate;
-    private Integer attachId;
+    private String attachId;
     private AttachEntity attach;
 }

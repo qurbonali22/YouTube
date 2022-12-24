@@ -1,4 +1,4 @@
-package com.example.YouTube.dto;
+package com.example.YouTube.dto.login;
 
 import com.example.YouTube.enums.ProfileRole;
 import com.fasterxml.jackson.annotation.JsonInclude;

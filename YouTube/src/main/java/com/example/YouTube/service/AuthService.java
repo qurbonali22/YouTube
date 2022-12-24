@@ -1,8 +1,8 @@
 package com.example.YouTube.service;
 
-import com.example.YouTube.dto.LoginDTO;
-import com.example.YouTube.dto.LoginResponseDTO;
-import com.example.YouTube.dto.ProfileDTO;
+import com.example.YouTube.dto.login.LoginDTO;
+import com.example.YouTube.dto.login.LoginResponseDTO;
+import com.example.YouTube.dto.profile.ProfileDTO;
 import com.example.YouTube.entity.ProfileEntity;
 import com.example.YouTube.enums.ProfileRole;
 import com.example.YouTube.enums.ProfileStatus;

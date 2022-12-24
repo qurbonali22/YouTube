@@ -1,4 +1,4 @@
-package com.example.YouTube.dto;
+package com.example.YouTube.dto.login;
 
 import lombok.Getter;
 import lombok.Setter;
