@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Table(name = "video")
 public class VideoEntity {
     @Id
-    @GenericGenerator(name = "attach_uuid", strategy = "org.hibernate.id.UUIDGenerator")
+    @GenericGenerator(name = "video_uuid", strategy = "org.hibernate.id.UUIDGenerator")
     private String id;
     @Column
     private String title;
