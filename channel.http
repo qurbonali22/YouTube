@@ -1,0 +1,11 @@
+### create category
+POST localhost:8081/channel/create/
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2NzE4MTU5MjEsImVtYWlsIjoiYWxpc2hlcm9kaWxvdjQ4MkBnbWFpbC5jb20iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImV4cCI6MTY3MTkwMjMyMSwiaXNzIjoia3VudXogdGVzdCBwb3J0YWxpIn0.WDe9zmKhYnnKv26AC4k-8Giudv9i5T8-lJOtycNguOcSFGn1iKru6mmb5jcsZOYNffSGiZDXKJRuSdS0aY-AJg
+Content-Type: application/json
+
+{
+  "name": "news",
+  "description": "Salomlar",
+  "photoId": "41edf4f2-1aa4-45c4-a6b7-f8eb212a2b71",
+  "bannerId": "41edf4f2-1aa4-45c4-a6b7-f8eb212a2b71"
+}
