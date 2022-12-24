@@ -4,9 +4,9 @@ Content-Type: multipart/form-data; boundary=WebAppBoundary
 Accept-Language: RU
 
 --WebAppBoundary
-Content-Disposition: form-data; name="file"; filename="rasm1.png"
+Content-Disposition: form-data; name="file"; filename="qw.png"
 
-< C:\Users\user\Desktop\rasm1.png
+< C:\Users\Prince\Pictures\Screenshots\qw.png
 
 
 ### open general

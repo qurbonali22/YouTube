@@ -1,9 +1,8 @@
 package com.example.YouTube.service;
 
+import com.example.YouTube.dto.videoLike.VideoLakeCreationDTO;
 import com.example.YouTube.dto.videoLike.VideoLikeDTO;
 import com.example.YouTube.entity.VideoLikeEntity;
-import com.example.YouTube.entity.VideoTagEntity;
-import com.example.YouTube.enums.Language;
 import com.example.YouTube.exception.ItemNotFoundException;
 import com.example.YouTube.repository.VideoLikeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ public class VideoLikeService {
     @Autowired
     private VideoLikeRepository videoLikeRepository;
 
-    public VideoLikeDTO create(VideoLikeDTO dto){
+    public VideoLikeDTO create(VideoLakeCreationDTO dto){
         VideoLikeEntity entity = new VideoLikeEntity();
         entity.setProfileId(dto.getProfileId());
         entity.setVideoId(dto.getVideoId());
@@ -26,6 +25,12 @@ public class VideoLikeService {
 
         videoLikeRepository.save(entity);
         return toDTO(entity);
+    }
+
+    public Boolean remove(VideoLakeCreationDTO dto){
+        VideoLikeEntity entity = getByProfileIdAndVideoId(dto.getProfileId(), dto.getVideoId());
+        videoLikeRepository.delete(entity);
+        return true;
     }
 
     public VideoLikeEntity getByProfileIdAndVideoId(String profile, String video){

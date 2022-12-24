@@ -4,10 +4,10 @@ POST http://localhost:8081/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Qurbonali",
-  "surname": "Qulmatov",
-  "email": "allidele574@gmail.com",
-  "phone": "+9989725541497",
+  "name": "Yorqin",
+  "surname": "Mislimov",
+  "email": "princename6363@gmail.com",
+  "phone": "+998919916363",
   "password": "12345678"
 }
 

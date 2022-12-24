@@ -22,7 +22,7 @@ class YouTubeApplicationTests {
 		dto.setDescription("for programmer");
 		dto.setBannerId("c19f90d9-3264-4b02-ba99-b53333fdfa97");
 		dto.setPhotoId("c19f90d9-3264-4b02-ba99-b53333fdfa97");
-		System.out.println(service.create(dto, 2));
+		//System.out.println(service.create(dto, 2));
 
 	}
 
