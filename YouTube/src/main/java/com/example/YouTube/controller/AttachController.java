@@ -37,7 +37,7 @@ public class AttachController {
 //        return attachService.open(fileName);
 //    }
 
-    @GetMapping(value = "/public/open_general/{fileName}", produces = MediaType.ALL_VALUE)
+    @GetMapping(value = "/public/open/{fileName}", produces = MediaType.ALL_VALUE)
     public byte[] open_general(@PathVariable("fileName") String fileName,
                                @RequestHeader(value = "Accept-Language", defaultValue = "RU") Language language) {
         return attachService.open_general(fileName, language);

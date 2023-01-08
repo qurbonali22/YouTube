@@ -72,6 +72,9 @@ public class VideoEntity {
     @JoinColumn(name = "channel_id", insertable = false, updatable = false)
     private ChannelEntity channel;
 
+    @Column
+    private Double duration;
+
 }
 
 
