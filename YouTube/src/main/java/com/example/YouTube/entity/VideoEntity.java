@@ -75,6 +75,13 @@ public class VideoEntity {
     @Column
     private Double duration;
 
+    @Column(name = "owner_id")
+    private Integer ownerId;
+    @ManyToOne
+    @JoinColumn(name = "owner_id", insertable = false, updatable = false)
+    private ProfileEntity owner;
+
+
 }
 
 
